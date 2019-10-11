@@ -34,14 +34,14 @@ export class App extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="panel panel-default">
-                    <div className="panel-heading">
-                        <h3 className="panel-title">
+                <div className="card card-default">
+                    <div className="card-heading">
+                        <h3 className="card-title">
                             BOARD LIST
                         </h3>
                     </div>
                 </div>
-                <div className="panel-body">
+                <div className="card-body">
                     <h4>
                         <Link to='/create'>Add Board</Link>
                         <table className="table table-striped">
@@ -52,6 +52,23 @@ export class App extends React.Component {
                                 <th>Author</th>
                             </tr>
                             </thead>
+                            <tbody>
+                            {
+                                this.state.boards.map(board => (
+                                    <tr key={board.key}>
+                                        <td><Link to={`/show/${board.key}`}>
+                                            {board.title}
+                                        </Link></td>
+                                        <td>
+                                            {board.description}
+                                        </td>
+                                        <td>
+                                            {board.author}
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                            </tbody>
                         </table>
                     </h4>
                 </div>
