@@ -52,21 +52,21 @@ export class Show extends React.Component {
                     </div>
                     <div className="card-body">
                         <dl>
-                            <dt>Description:
-                                <dd>
+                            <div>Description:
+                                <p>
                                     {this.state.board.description}
-                                </dd>
-                            </dt>
-                            <dt>Author:
-                                <dd>
+                                </p>
+                            </div>
+                            <div>Author:
+                                <p>
                                     {this.state.board.author}
-                                </dd>
-                            </dt>
-                            <dt>Title:
-                                <dd>
+                                </p>
+                            </div>
+                            <div>Title:
+                                <p>
                                     {this.state.board.title}
-                                </dd>
-                            </dt>
+                                </p>
+                            </div>
                         </dl>
                         <Link
                             className='btn btn-success mr-2'

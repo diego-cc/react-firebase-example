@@ -15,7 +15,7 @@ export class App extends React.Component {
     onCollectionUpdate = querySnapshot => {
         const boards = [];
         querySnapshot.forEach(doc => {
-            const {title, author, description} = doc.data;
+            const {title, author, description} = doc.data();
             boards.push({
                 key: doc.id,
                 doc, // document snapshot,
