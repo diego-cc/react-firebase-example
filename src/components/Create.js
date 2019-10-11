@@ -17,7 +17,7 @@ export class Create extends React.Component {
     }
 
     onChange = e => {
-        const state = {...this.state};
+        const state = this.state;
         state[e.target.name] = e.target.value;
         this.setState({state});
     };
@@ -74,8 +74,8 @@ export class Create extends React.Component {
                             rows="3"
                             onChange={this.onChange}
                             placeholder='Description'
+                            value={description}
                             className="form-control">
-                            {description}
                         </textarea>
                     </div>
                     <div className="form-group">

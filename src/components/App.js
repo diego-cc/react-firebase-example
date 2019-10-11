@@ -27,6 +27,10 @@ export class App extends React.Component {
         this.setState({boards});
     };
 
+    componentWillUnmount() {
+
+    }
+
     componentDidMount() {
         this.unsubscribe = this.ref.onSnapshot(this.onCollectionUpdate);
     }
