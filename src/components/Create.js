@@ -33,14 +33,9 @@ export class Create extends React.Component {
                 description,
                 author
             })
-            .then(docRef => {
-                this.setState({
-                    title: ``,
-                    description: ``,
-                    author: ``
-                });
+            .then(() => {
                 this.props.history.push('/');
-            })
+            });
     };
 
     render() {
@@ -53,6 +48,7 @@ export class Create extends React.Component {
                 </h4>
 
                 <form
+                    autoComplete='off'
                     onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label htmlFor="title">
