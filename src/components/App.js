@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from "../Firebase";
 import {Link} from "react-router-dom";
+import {truncateEnd, truncateMiddle} from 'friendly-truncate';
 
 export class App extends React.Component {
     constructor(props) {
@@ -57,10 +58,10 @@ export class App extends React.Component {
                                 this.state.boards.map(board => (
                                     <tr key={board.key}>
                                         <td><Link to={`/show/${board.key}`}>
-                                            {board.title}
+                                            {truncateEnd(board.title, 30)}
                                         </Link></td>
                                         <td>
-                                            {board.description}
+                                            {truncateMiddle(board.description, 30)}
                                         </td>
                                         <td>
                                             {board.author}

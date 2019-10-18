@@ -26,16 +26,18 @@ export class Create extends React.Component {
         e.preventDefault();
         const {title, description, author} = {...this.state};
 
-        this
-            .ref
-            .add({
-                title,
-                description,
-                author
-            })
-            .then(() => {
-                this.props.history.push('/');
-            });
+        if (title.trim().length && description.trim().length && author.trim().length) {
+            this
+                .ref
+                .add({
+                    title,
+                    description,
+                    author
+                })
+                .then(() => {
+                    this.props.history.push('/');
+                });
+        }
     };
 
     render() {
@@ -56,7 +58,7 @@ export class Create extends React.Component {
                         <input
                             className='form-control'
                             name='title'
-                            value={title}
+                            defaultValue={title}
                             onChange={this.onChange}
                             placeholder='Title'
                             type="text"/>
@@ -70,7 +72,7 @@ export class Create extends React.Component {
                             rows="3"
                             onChange={this.onChange}
                             placeholder='Description'
-                            value={description}
+                            defaultValue={description}
                             className="form-control">
                         </textarea>
                     </div>
@@ -80,7 +82,7 @@ export class Create extends React.Component {
                         <input
                             className='form-control'
                             name='author'
-                            value={author}
+                            defaultValue={author}
                             onChange={this.onChange}
                             placeholder='Author'
                             type="text"/>
